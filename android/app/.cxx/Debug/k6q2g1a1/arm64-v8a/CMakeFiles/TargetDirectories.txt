@@ -1,0 +1,2 @@
+C:/Users/Jhalak Upadhyay/dev/FossAsia/badgemagic-app/android/app/.cxx/Debug/k6q2g1a1/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Jhalak Upadhyay/dev/FossAsia/badgemagic-app/android/app/.cxx/Debug/k6q2g1a1/arm64-v8a/CMakeFiles/rebuild_cache.dir
