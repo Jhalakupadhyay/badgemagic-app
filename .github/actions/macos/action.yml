@@ -32,7 +32,7 @@ runs:
         VERSION_NAME: ${{ inputs.VERSION_NAME }}
         VERSION_CODE: ${{ inputs.VERSION_CODE }}
       run: |
-        flutter build macos --release --build-name $VERSION_NAME --build-number $VERSION_CODE
+        flutter build macos --no-codesign --build-name $VERSION_NAME --build-number $VERSION_CODE
 
     - name: Build macOS App (With Code Signing)
       if: ${{ github.event_name == 'push' }}
@@ -41,4 +41,4 @@ runs:
         VERSION_NAME: ${{ inputs.VERSION_NAME }}
         VERSION_CODE: ${{ inputs.VERSION_CODE }}
       run: |
-        flutter build macos --release --build-name $VERSION_NAME --build-number $VERSION_CODE --codesign
+        flutter build macos --build-name $VERSION_NAME --build-number $VERSION_CODE
