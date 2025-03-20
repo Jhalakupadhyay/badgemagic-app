@@ -48,4 +48,5 @@ runs:
       with:
         name: macos-app
         path: |
-          build/macos/
+          build/macos/Build/Products/Release/
+        
