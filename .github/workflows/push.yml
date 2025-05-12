@@ -195,7 +195,19 @@ jobs:
           if [[ $? -ne 0 ]]; then
               exit 1
           fi
-  
+          
+  macos:
+    name: MACOS Flutter Build
+    needs: common
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: macOS workflow
+        uses: ./.github/actions/macos
+        with:
+          VERSION_NAME: ${{needs.common.outputs.VERSION_NAME}}
+          VERSION_CODE: ${{needs.common.outputs.VERSION_CODE}}
+      
   update-release:
     name: Update Draft Release
     needs: [common, android, ios]
