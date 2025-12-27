@@ -551,9 +551,8 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                           LayoutBuilder(
                             builder: (context, constraints) {
-                              final screenHeight =
-                                  MediaQuery.of(context).size.height;
-                              final availableHeight = screenHeight * 0.45;
+                              final availableHeight =
+                                  0.5 * ScreenUtil().screenHeight;
 
                               return ConstrainedBox(
                                 constraints: BoxConstraints(
@@ -568,16 +567,14 @@ class _HomeScreenState extends State<HomeScreen>
                                         const NeverScrollableScrollPhysics(),
                                     controller: _tabController,
                                     children: [
-                                      Center(
-                                        child: GestureDetector(
-                                          onPanDown: (_) => setState(
-                                              () => isDialInteracting = true),
-                                          onPanCancel: () => setState(
-                                              () => isDialInteracting = false),
-                                          onPanEnd: (_) => setState(
-                                              () => isDialInteracting = false),
-                                          child: RadialDial(),
-                                        ),
+                                      GestureDetector(
+                                        onPanDown: (_) => setState(
+                                            () => isDialInteracting = true),
+                                        onPanCancel: () => setState(
+                                            () => isDialInteracting = false),
+                                        onPanEnd: (_) => setState(
+                                            () => isDialInteracting = false),
+                                        child: RadialDial(),
                                       ),
                                       const TransitionTab(),
                                       const EffectTab(),
@@ -588,7 +585,6 @@ class _HomeScreenState extends State<HomeScreen>
                               );
                             },
                           ),
-                          SizedBox(height: 100.h),
                         ],
                       ),
                     ),
